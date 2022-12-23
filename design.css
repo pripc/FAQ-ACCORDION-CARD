@@ -1,0 +1,88 @@
+:root{
+    --VerydarkText: hsl(238, 29%, 16%);
+    --SoftredText: hsl(14, 88%, 65%);
+    --Softviolet: hsl(273, 75%, 66%);
+    --Softblue: hsl(240, 73%, 65%);
+    --VerydarkgrayishblueText: hsl(237, 12%, 33%);
+    --DarkgrayishblueText: hsl(240, 6%, 50%);
+    --LightgrayishblueDividers: hsl(240, 5%, 91%);
+
+}
+body{
+    background-color:var(--Softviolet);
+    background-image: linear-gradient(180deg, --softviolet, --softblue);
+    font-family:Kumbh Sans;
+}
+header img{
+    width:80%;
+    position:relative;
+    margin-right:0px;
+    margin-left:10%;
+    z-index:1;  /*Define a ordem dos elementos,Qt maior o número,mais a frente o elemento ficará*/
+    
+}
+header #shadow{
+    width:80%;
+    position:absolute;
+    margin-top:-100px;
+    z-index:0; /*Define a ordem dos elementos,Qt maior o número,mais a frente o elemento ficará*/
+    
+}
+#card{
+    background-color: white;
+    height:auto;
+    border-radius: 12px;
+    display:grid;
+    grid-auto-flow: row;
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:-27%;
+    box-shadow: 0px 10px 70px var(--Softblue);
+}
+#title{
+    color:var(--VerydarkText);
+    font-size:20px;
+    margin-top:6rem;
+    text-align: center;
+
+}
+#FAQ{
+    padding-left:2rem;
+    padding-right:2rem;
+    font-size:12px;
+}
+.question{
+    color:var(--VerydarkgrayishblueText);
+    font-weight:400;
+    background: url("images/icon-arrow-down.svg") no-repeat right; /*Inserindo a imagem via CSS ela ficará alinhada em todas as colunas*/
+}
+.answer{
+    color:var(--DarkgrayishblueText);
+    margin-left:0px;
+    display:none;
+    padding-bottom: 5px;    
+
+}
+.answer.active{
+    display:block;
+}
+.question.active{
+    font-weight: 700;
+    
+    
+}
+.question.active:after{ /*pega o fim do texto e acrescenta o estilo aqui definido*/
+    background: url("images/icon-arrow-down.svg") no-repeat right;
+    transform:rotateX(180deg)
+}
+input{
+    align-items: flex-end;
+}
+footer{
+    height:30px;
+}
+.attribution { 
+    font-size: 11px;
+     text-align: center;
+    padding-top:20px; }
+.attribution a { color: hsl(228, 45%, 44%); }
