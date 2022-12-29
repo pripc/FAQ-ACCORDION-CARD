@@ -54,7 +54,10 @@ header #shadow{
 .question{
     color:var(--VerydarkgrayishblueText);
     font-weight:400;
-    background: url("images/icon-arrow-down.svg") no-repeat right; /*Inserindo a imagem via CSS ela ficará alinhada em todas as colunas*/
+    
+}
+p img{
+    margin-right: 0px;
 }
 .answer{
     color:var(--DarkgrayishblueText);
@@ -63,17 +66,16 @@ header #shadow{
     padding-bottom: 5px;    
 
 }
-.answer.active{
+.answerActive{
     display:block;
 }
-.question.active{
+.questionBold{
     font-weight: 700;
-    
+    display:block
     
 }
-.question.active:after{ /*pega o fim do texto e acrescenta o estilo aqui definido*/
-    background: url("images/icon-arrow-down.svg") no-repeat right;
-    transform:rotateX(180deg)
+.arrowReverter{ 
+    transform:rotateX(180deg);
 }
 input{
     align-items: flex-end;
