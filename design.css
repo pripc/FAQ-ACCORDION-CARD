@@ -1,3 +1,5 @@
+@media (max-width: 900px)
+{
 :root{
     --VerydarkText: hsl(238, 29%, 16%);
     --SoftredText: hsl(14, 88%, 65%);
@@ -12,20 +14,34 @@ body{
     background-color:var(--Softviolet);
     background-image: linear-gradient(180deg, --softviolet, --softblue);
     font-family:Kumbh Sans;
+    text-align: center;
 }
-header img{
+#section{
+    display:grid;
+    grid-auto-flow: row;
+    grid-template-columns: 50%;
+    margin-left:20%;
+    width:120%;
+}
+#mobile{
     width:80%;
     position:relative;
     margin-right:0px;
-    margin-left:10%;
-    z-index:1;  /*Define a ordem dos elementos,Qt maior o número,mais a frente o elemento ficará*/
+    margin-left:0;
+    margin-top:10%;
+    z-index:2;  /*Define a ordem dos elementos,Qt maior o número,mais a frente o elemento ficará*/
+    
+}
+.desktop{
+    display:none;
     
 }
 header #shadow{
     width:80%;
-    position:absolute;
-    margin-top:-100px;
-    z-index:0; /*Define a ordem dos elementos,Qt maior o número,mais a frente o elemento ficará*/
+    position:relative;
+    margin-top:-60%;
+    margin-left:2%;
+    z-index:1; /*Define a ordem dos elementos,Qt maior o número,mais a frente o elemento ficará*/
     
 }
 #card{
@@ -34,10 +50,12 @@ header #shadow{
     border-radius: 12px;
     display:grid;
     grid-auto-flow: row;
-    margin-left:5%;
-    margin-right:5%;
-    margin-top:-27%;
+    margin-left:2%;
+    margin-right:2%;
+    margin-top:-25%;
     box-shadow: 0px 10px 70px var(--Softblue);
+    
+    
 }
 #title{
     color:var(--VerydarkText);
@@ -54,7 +72,11 @@ header #shadow{
 .question{
     color:var(--VerydarkgrayishblueText);
     font-weight:400;
-    background: url("images/icon-arrow-down.svg") no-repeat right; /*Inserindo a imagem via CSS ela ficará alinhada em todas as colunas*/
+    
+}
+
+p img{
+    margin-right: 0px;
 }
 .answer{
     color:var(--DarkgrayishblueText);
@@ -63,17 +85,16 @@ header #shadow{
     padding-bottom: 5px;    
 
 }
-.answer.active{
+.answerActive{
     display:block;
 }
-.question.active{
+.questionBold{
     font-weight: 700;
-    
+    display:block
     
 }
-.question.active:after{ /*pega o fim do texto e acrescenta o estilo aqui definido*/
-    background: url("images/icon-arrow-down.svg") no-repeat right;
-    transform:rotateX(180deg)
+.arrowReverter{ 
+    transform:rotateX(180deg);
 }
 input{
     align-items: flex-end;
@@ -86,3 +107,122 @@ footer{
      text-align: center;
     padding-top:20px; }
 .attribution a { color: hsl(228, 45%, 44%); }
+}
+@media (min-width: 901px){
+    :root{
+        --VerydarkText: hsl(238, 29%, 16%);
+        --SoftredText: hsl(14, 88%, 65%);
+        --Softviolet: hsl(273, 75%, 66%);
+        --Softblue: hsl(240, 73%, 65%);
+        --VerydarkgrayishblueText: hsl(237, 12%, 33%);
+        --DarkgrayishblueText: hsl(240, 6%, 50%);
+        --LightgrayishblueDividers: hsl(240, 5%, 91%);
+    
+    }
+    body{
+        background-color:var(--Softviolet);
+        background-image: linear-gradient(180deg, --softviolet, --softblue);
+        font-family:Kumbh Sans;
+        margin:0px;
+        z-index:-1;
+      
+
+    }
+    #section{
+        display:grid;
+        grid-auto-flow: column;
+        grid-template-columns: 50%;
+        width: 70%;
+        background-color: white;
+        height:35rem;
+        border-radius: 12px;
+        margin-top:8rem;
+        box-shadow: 0px 10px 70px var(--Softblue);
+        margin-left:10%;
+    }
+    #mobile{
+        display:none;
+        
+    }
+    .desktop{
+        width:80%;
+        position:relative;
+        width:100%;
+        margin-left:-70px;
+        margin-top: 100px;
+        z-index:1;  /*Define a ordem dos elementos,Qt maior o número,mais a frente o elemento ficará*/
+        
+    }
+    #box{
+        width:16%;
+        position:absolute;
+        z-index:2;
+        margin-left:-8%;
+        margin-top: 18%;
+    }
+    header #shadow{
+        width:100%;
+        position:relative;
+        margin-left:-15%;
+        margin-top: -30%;
+        z-index:0; /*Define a ordem dos elementos,Qt maior o número,mais a frente o elemento ficará*/
+        
+    }
+    #card{
+        margin-left: 10%;
+        margin-right:10%;
+    }
+
+    #title{
+        color:var(--VerydarkText);
+        font-size:20px;
+        margin-top:6rem;
+    
+    }
+    #FAQ{
+        font-size:15px;
+    }
+    .question{
+        color:var(--VerydarkgrayishblueText);
+        font-weight:400;
+        margin-bottom: 40px;
+        
+    }
+    .question:hover{
+        color:#F47B56;
+        font-weight: 700;
+        cursor:pointer;
+    }
+    p img{
+        margin-right: 0px;
+    }
+    .answer{
+        color:var(--DarkgrayishblueText);
+        margin-left:0px;
+        display:none;
+        padding-bottom: 5px;    
+    
+    }
+    .answerActive{
+        display:block;
+    }
+    .questionBold{
+        font-weight: 700;
+        display:block
+        
+    }
+    .arrowReverter{ 
+        transform:rotateX(180deg);
+    }
+    input{
+        align-items: flex-end;
+    }
+    footer{
+        height:30px;
+    }
+    .attribution { 
+        font-size: 11px;
+        text-align: center;
+        padding-top:20px; }
+    .attribution a { color: hsl(228, 45%, 44%); }    
+}
